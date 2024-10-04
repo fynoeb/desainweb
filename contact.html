@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fayi Amatullah Azhara Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/manifest.json">
+    <style>
+        html, body {
+            margin: 0;
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        nav {
+            background-color: #000;
+            padding: 10px 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 5px 10px;
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+        nav ul li a.active, nav ul li a:hover {
+            background-color: #555;
+            border-radius: 5px;
+            transform: translateY(-3px);
+        }
+        .content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            justify-content: space-between; /* Spread content evenly */
+        }
+        .left-content {
+            width: 60%;
+        }
+        .right-content {
+            width: 35%;
+            margin-left: 20px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            font-weight: 600;
+        }
+        .social-buttons {
+            margin-top: 20px;
+        }
+        .social-buttons a {
+            text-decoration: none;
+            color: white;
+            background-color: #000;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+        .social-buttons a:hover {
+            background-color: #555;
+            transform: translateY(-3px);
+        }
+        .map-section {
+            margin-top: 20px;
+        }
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+        footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        /* Styling for form */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form label {
+            margin: 10px 0 5px;
+            font-weight: 600;
+        }
+        form input, form textarea, form select {
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+        form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        form .radio-group {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 10px;
+        }
+        form .radio-group input {
+            margin-right: 10px;
+        }
+        form button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+        form button:hover {
+            background-color: #555;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="content">
+        <!-- Left Content (Original Content) -->
+        <div class="left-content">
+            <h1>Contact Me</h1>
+            <p>Halo, untuk info lebih lanjut, silahkan hubungi saya</p>
+            <div class="social-buttons">
+                <a href="https://wa.me/+6281275042748?text=Hai%20Fayi%21%2C%20saya%20ingin%20memulai%20obrolan%20dengan%20anda" target="_blank">WhatsApp</a>
+                <a href="https://www.instagram.com/fayiazharaa" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/in/fayi-amatullah-77436619b/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="map-section">
+                <h2>Location</h2>
+                <iframe class="map-container" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127389.6993986356!2d100.30728015446474!3d-0.9572444921571404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b9386b8f5827%3A0x3039d80b2203c50!2sPadang%2C%20Kota%20Padang%2C%20Sumatera%20Barat!5e0!3m2!1sen!2sid!4v1661258674831!5m2!1sen!2sid" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <!-- Right Content (Form) -->
+        <div class="right-content">
+            <h2>Kirim Pesan</h2>
+            <form action="index.html" method="post" onsubmit="alert('Form berhasil dikirim'); return false;">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+
+                <label for="category">Kategori:</label>
+                <select id="category" name="category" required>
+                    <option value="pertanyaan">Pertanyaan</option>
+                    <option value="saran">Saran</option>
+                    <option value="masalah">Masalah</option>
+                </select>
+
+                <label for="message">Pesan:</label>
+                <textarea id="message" name="message" placeholder="Tulis pesan Anda" required></textarea>
+
+                <label>Ingin menerima balasan?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="reply" value="yes" required> Ya</label>
+                    <label><input type="radio" name="reply" value="no"> Tidak</label>
+                </div>
+
+                <button type="submit">Kirim</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Designed & Built By Fayi Amatullah</p>
+    </footer>
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+          e.preventDefault();
+          deferredPrompt = e;
+          // Show install button or prompt the user
+        });
+      </script>
+      
+</body>
+</html>

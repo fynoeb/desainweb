@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fayi Amatullah Azhara Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/manifest.json">
+    <style>
+        html, body {
+            margin: 0;
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        nav {
+            background-color: #000;
+            padding: 10px 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 5px 10px;
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+        nav ul li a.active, nav ul li a:hover {
+            background-color: #555;
+            border-radius: 5px;
+            transform: translateY(-3px);
+        }
+        .content {
+            padding: 20px;
+            flex: 1; 
+        }
+        h1 {
+            font-weight: 600;
+        }
+        .section {
+            margin-top: 20px;
+        }
+        .section h2 {
+            font-weight: 600;
+        } 
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        .button {
+            flex: 1 1 200px;
+            border: 2px solid #ddd;
+            border-radius: 15px;
+            overflow: hidden;
+            text-align: center;
+            background-color: #f8f9fa; 
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+            padding: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #000;
+            display: block;
+        }
+        .button:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+        .button img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .button p {
+            margin: 10px 0;
+            font-weight: 400;
+        }
+        footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .btn {
+            display: grid;
+            place-items: center;
+            background: #e3edf7;
+            padding: 1.4em;
+            border-radius: 10px;
+            box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+                        -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0);
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+        .btn:hover {
+            box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+                        inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+                        -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+                        0.5px 0.5px 0px rgba(0, 0, 0, 0.15), 
+                        0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transform: translateY(0.5em);
+        }
+        .btn svg {
+            transition: transform 0.5s;
+        }
+        .btn:hover svg {
+            transform: scale(0.9);
+            fill: #333333;
+        }
+    </style>
+    <script>
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert(text + " copied to clipboard!");
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="content">
+        <section class="content">
+            <h1>tentang projek saya</h1>
+        
+            <h2>1. Home (Halaman Utama)</h2>
+            <p>Di halaman utama ini, saya menampilkan pengenalan singkat tentang diri saya. Pengguna dapat dengan mudah bernavigasi ke halaman "About" dan "Contact" melalui navigasi yang tersedia. Halaman ini menjadi pintu utama bagi pengguna untuk mengenal saya lebih jauh.</p>
+            <p><strong>Penjelasan singkat:</strong> Halaman ini adalah halaman landing atau beranda utama aplikasi web, tempat pengunjung pertama kali datang dan mendapatkan kesan awal.</p>
+            <p><strong>Tombol:</strong></p>
+            <ul>
+                <li><strong>More About Me:</strong> Tombol ini akan membawa pengguna ke halaman "About", di mana mereka dapat membaca lebih lanjut tentang diri saya dan pengalaman saya.</li>
+                <li><strong>Contact Me:</strong> Tombol ini mengarahkan pengguna ke halaman "Contact" untuk menghubungi saya melalui berbagai platform.</li>
+            </ul>
+        
+            <h2>2. About (Tentang)</h2>
+            <p>Di sini, saya menjelaskan lebih detail tentang latar belakang saya, pendidikan, prestasi, dan pengalaman. Halaman ini dirancang agar pengunjung bisa mendapatkan gambaran lengkap mengenai siapa saya dan apa yang sudah saya capai selama ini.</p>
+            <p><strong>Penjelasan singkat:</strong> Halaman ini berfungsi sebagai profil yang lebih mendalam untuk menjelaskan diri Anda secara profesional dan personal.</p>
+            <p><strong>Tombol:</strong></p>
+            <ul>
+                <li><strong>Prestasi:</strong> Tombol-tombol di bagian prestasi akan mengarahkan pengguna ke artikel atau halaman terkait pencapaian saya, seperti UNICEF, OSN, POSPENAS, dan MTQ.</li>
+                <li><strong>Sekolah:</strong> Tombol ini membawa pengguna ke halaman profil sekolah-sekolah yang pernah saya tempuh, seperti SD Al-Fityah, SMP Insan Cendekia, dan Universitas Andalas.</li>
+                <li><strong>Game:</strong> Tombol game ini memungkinkan pengguna untuk menyalin ID game saya di PUBG dan Mobile Legends agar mereka bisa terhubung dengan saya melalui game.</li>
+            </ul>
+        
+            <h2>3. Contact (Kontak)</h2>
+            <p>Halaman kontak ini memungkinkan pengunjung untuk menghubungi saya secara langsung melalui berbagai platform seperti WhatsApp, Instagram, dan LinkedIn. Saya juga menyediakan formulir bagi mereka yang ingin mengirim pesan atau pertanyaan secara langsung. Selain itu, saya menambahkan integrasi Google Maps untuk memudahkan pengunjung melihat lokasi saya.</p>
+            <p><strong>Penjelasan singkat:</strong> Halaman ini menyediakan berbagai cara bagi pengunjung untuk menghubungi Anda, baik melalui platform media sosial atau formulir langsung.</p>
+            <p><strong>Tombol:</strong></p>
+            <ul>
+                <li><strong>WhatsApp:</strong> Tombol ini langsung mengarahkan pengguna ke chat WhatsApp untuk memulai percakapan dengan saya.</li>
+                <li><strong>Instagram:</strong> Tombol ini membawa pengguna ke profil Instagram saya.</li>
+                <li><strong>LinkedIn:</strong> Tombol ini mengarahkan pengguna ke LinkedIn saya untuk koneksi profesional.</li>
+                <li><strong>Formulir Kontak:</strong> Pengguna bisa mengirim pesan langsung kepada saya melalui formulir ini, yang dilengkapi dengan opsi kategori pesan dan konfirmasi apakah mereka ingin mendapatkan balasan.</li>
+            </ul>
+        
+            <h2>4. Navigasi</h2>
+            <p>Saya membuat sistem navigasi yang sederhana namun efektif, sehingga pengguna dapat berpindah dengan mudah antara halaman "Home," "About," dan "Contact". Dengan navigasi ini, pengalaman pengguna menjadi lebih nyaman dan cepat.</p>
+            <p><strong>Penjelasan singkat:</strong> Navigasi ini membantu pengunjung berpindah antarhalaman dengan mudah dan memberikan struktur yang jelas pada aplikasi web.</p>
+        
+            <h2>5. Desain Responsif dan Animasi</h2>
+            <p>Saya memastikan desain aplikasi ini responsif agar tampilannya tetap optimal di berbagai perangkat. Saya juga menambahkan animasi hover pada tombol dan gambar agar pengalaman pengguna lebih interaktif dan menarik, sesuai dengan estetika desain modern yang saya inginkan.</p>
+            <p><strong>Penjelasan singkat:</strong> Desain yang responsif memastikan tampilan yang bagus di berbagai perangkat, dan animasi menambahkan elemen interaksi yang menyenangkan bagi pengguna.</p>
+        </section>
+        
+        
+
+        <!-- Prestasi Section -->
+        <section class="section">
+            <h2>Prestasi</h2>
+            <div class="button-container">
+                <a href="https://www.majalahoutsiders.com/2022/10/04/dua-siswi-icbs-payakumbuh-ikuti-ayimun-2022/" class="button">
+                    <img src="logoAyimun.jpeg" alt="UNICEF">
+                    <p>As Delegates UNICEF at Asia Youth International Model United Nations 2022</p>
+                </a>
+                <a href="https://www.instagram.com/p/Ce8QvQ3LBoW/" class="button">
+                    <img src="logoOsn.jpeg" alt="Olimpiade">
+                    <p>Olimpiade Sains Nasional Tingkat Provinsi bidang Informatika 2022</p>
+                </a>
+                <a href="https://infopublik.id/kategori/nusantara/688785/peserta-lomba-video-film-pendek-sabet-juara-ii-pospenas-ix-tahun-2022?show=" class="button">
+                    <img src="logoPospenas.jpeg" alt="Video Film Pendek">
+                    <p>Juara 2 Video Film Pendek tingkat Nasional POSPENAS IX 2022</p>
+                </a>
+                <a href="https://drive.google.com/file/d/12_K0GaEkZAAl9_lgZ5hHFaYaOd2E39pi/view?usp=sharing" class="button">
+                    <img src="logoMsq.jpeg" alt="MSQ">
+                    <p>Juara 2 MSQ pada MTQ XXIII Kab. Rokan Hulu 2023</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Sekolah Section -->
+        <section class="section">
+            <h2>Sekolah</h2>
+            <div class="button-container">
+                <a href="https://sditalfityah.sch.id" class="button">
+                    <img src="logoSD.png" alt="SD Al-fityah Pekanbaru">
+                    <p>SD Al-fityah Pekanbaru</p>
+                </a>
+                <a href="https://icbs.sch.id/smp/" class="button">
+                    <img src="logoSMP.png" alt="SMP Insan Cendekia PYK">
+                    <p>SMP Insan Cendekia PYK</p>
+                </a>
+                <a href="https://icbs.sch.id/sma/" class="button">
+                    <img src="logoSMP.png" alt="SMA Insan Cendekia PYK">
+                    <p>SMA Insan Cendekia PYK</p>
+                </a>
+                <a href="https://www.unand.ac.id/" class="button">
+                    <img src="logoUNAND.png" alt="Universitas Andalas">
+                    <p>Universitas Andalas</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Game Section -->
+        <section class="section">
+            <h2>Game</h2>
+            <div class="button-container">
+                <button class="btn" onclick="copyText('5831951800')">
+                    🔫
+                    <span>PUBG</span>
+                </button>
+                <button class="btn" onclick="copyText('69415809')">
+                    🎮
+                    <span>ML</span>
+                </button>
+            </div>
+        </section>
+    </section>
+    <footer>
+        <p>&copy; 2024 Designed & Built By Fayi Amatullah</p>
+    </footer>
+    <script>
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+          e.preventDefault();
+          deferredPrompt = e;
+          // Show install button or prompt the user
+        });
+      </script>      
+</body>
+</html>

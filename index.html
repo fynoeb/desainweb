@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fayi Amatullah Azhara Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="manifest.json"> <!-- Pastikan path ini benar -->
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        nav {
+            background-color: #000;
+            padding: 10px 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 5px 10px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        nav ul li a.active, nav ul li a:hover {
+            background-color: #555;
+            border-radius: 5px;
+            transform: translateY(-3px);
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+        }
+        h1 {
+            font-weight: 600;
+        }
+        img {
+            margin-top: 20px;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            transition: transform 0.8s ease-in-out;
+        }
+        img:hover {
+            transform: rotate(360deg);
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.2em;
+            padding: 0.75em 1em;
+            color: #000;
+            border: 0.15em solid #000;
+            border-radius: calc(0.75em + 0.5em + 0.15em);
+            margin: 0 10px;
+            transition: 3s;
+        }
+        .button:before,
+        .button:after {
+            content: '';
+            position: absolute;
+            top: -1.5em;
+            z-index: -1;
+            width: 200%;
+            aspect-ratio: 1;
+            border-radius: 40%;
+            background-color: rgba(0, 0, 0, 0.25);
+            transition: 3s;
+        }
+        .button:before {
+            left: -80%;
+            transform: translate3d(0, 5em, 0) rotate(-340deg);
+        }
+        .button:after {
+            right: -80%;
+            transform: translate3d(0, 5em, 0) rotate(390deg);
+        }
+        .button:hover,
+        .button:focus {
+            color: white;
+        }
+        .button:hover:before,
+        .button:hover:after {
+            transform: translate3d(0, -1.5em, 0) rotate(0deg);
+            background-color: rgba(0, 0, 0, 0.75);
+        }
+        footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="content">
+        <h1>Hi! I'm Fayi Amatullah Azhara</h1>
+        <p>Informatics student at Andalas University</p>
+        <img src="fayi.jpeg" alt="Fayi Amatullah Azhara">
+        <div class="button-container">
+            <a href="about.html" class="button">More About Me</a>
+            <a href="contact.html" class="button">Contact Me</a>
+        </div>
+        <button id="installButton" style="display: none;">Install PWA</button>
+
+        <script>
+            // Service worker registration
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/service-worker.js')
+                .then((registration) => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch((error) => {
+                    console.log('Service Worker registration failed:', error);
+                });
+            }
+
+            let deferredPrompt;
+            window.addEventListener('beforeinstallprompt', (e) => {
+                console.log('beforeinstallprompt Event fired');
+                e.preventDefault();
+                deferredPrompt = e;
+                // Tampilkan tombol untuk menginstal PWA
+                const installButton = document.getElementById('installButton');
+                installButton.style.display = 'block';
+
+                installButton.addEventListener('click', () => {
+                    installButton.style.display = 'none';
+                    deferredPrompt.prompt();
+                    deferredPrompt.userChoice.then((choiceResult) => {
+                        if (choiceResult.outcome === 'accepted') {
+                            console.log('User accepted the A2HS prompt');
+                        } else {
+                            console.log('User dismissed the A2HS prompt');
+                        }
+                        deferredPrompt = null;
+                    });
+                });
+            });
+
+            // Cek apakah event berhasil dipicu
+            window.addEventListener('appinstalled', (event) => {
+                console.log('PWA installed', event);
+            });
+        </script>
+    </section>
+    <footer>
+        <p>&copy; 2024 Designed & Built By Fayi Amatullah</p>
+    </footer>
+</body>
+</html>
